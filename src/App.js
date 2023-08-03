@@ -36,13 +36,17 @@ export default function App() {
   return (
     <div className="App">
       {values &&
-        values.map((item) => {
-          return (
-            <div>
-              <h1 key={item.id + item.name}> {item.username} </h1>
-            </div>
-          );
-        })}
+        values
+          .filter((item) => {
+            return item.username === "Bret";
+          })
+          .map((item) => {
+            return (
+              <div>
+                <h1 key={item.id + item.name}> {item.username} </h1>
+              </div>
+            );
+          })}
     </div>
   );
 }
